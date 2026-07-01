@@ -1,5 +1,8 @@
 //This section is a basic express server setup, which is used to create a backend for the application. It is important to note that this is not a full backend, but rather a simple server that can handle requests and responses.
 //It will look something very close to this, but with different routes and data being sent back to the client.
+//Express reads from top to bottom, which is why the set up of this example must not be changed. 
+//The consr and require functions should be listed first, then the app = express, then the app.use, then the imported routers, then the app.listen
+//Specific routes should be listed before the generic routes, because the generic routes will catch all requests that don't match the specific routes, and will send back a 404 error.
 
 const cors = require('cors')
 const express = require('express');

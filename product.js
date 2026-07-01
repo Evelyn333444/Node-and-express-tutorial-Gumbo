@@ -32,4 +32,12 @@ router.get('/:id', (req, res) => {
     )
 })
 
+//This is copied from server.js, but it is showing that you can create a new route in product.js, and the user will still see it.
+router.post('/', (req, res) => {
+    const { name, price } = req.body
+    const newProduct = { name, price }
+    console.log(`Received product: ${name}, Price: ${price}`)
+    res.send('Product received')
+})
+
 module.exports = router
